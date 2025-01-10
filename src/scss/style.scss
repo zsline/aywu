@@ -213,3 +213,32 @@ h3 {
 .hero__container h3{
     margin-top: 76px;
 }
+
+
+@media (max-width: 1096px){
+    .header__nav {
+        display: none;
+    }
+}
+@media (max-width: 760px){
+    .hero{
+        padding: 144px 0 80px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    .hero__images {
+        max-height: 350px;
+        flex-wrap: wrap;
+        gap: 20px
+    }
+
+    .hero__images_row {
+        gap: 20px;
+        max-width: calc(50% - 10px);
+        margin: 0
+    }
+}
