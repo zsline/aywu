@@ -315,7 +315,7 @@ h3 {
     font-size: 20px;
   }
   .hero__images {
-    max-height: 350px;
+    max-height: 100vh;
     flex-wrap: wrap;
     gap: 20px;
   }
