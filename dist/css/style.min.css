@@ -1,0 +1,300 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: ElMessiri;
+  font-display: swap;
+  src: url("../fonts/ElMessiri-Bold.woff2") format("woff2"), url("../fonts/ElMessiri-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: ElMessiri;
+  font-display: swap;
+  src: url("../fonts/ElMessiri-Medium.woff2") format("woff2"), url("../fonts/ElMessiri-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: ElMessiri;
+  font-display: swap;
+  src: url("../fonts/ElMessiri-Regular.woff2") format("woff2"), url("../fonts/ElMessiri-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-Italic.woff2") format("woff2"), url("../fonts/Mulish-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-Medium.woff2") format("woff2"), url("../fonts/Mulish-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: ElMessiri;
+  font-display: swap;
+  src: url("../fonts/ElMessiri-SemiBold.woff2") format("woff2"), url("../fonts/ElMessiri-SemiBold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-Regular.woff2") format("woff2"), url("../fonts/Mulish-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-MediumItalic.woff2") format("woff2"), url("../fonts/Mulish-MediumItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-SemiBold.woff2") format("woff2"), url("../fonts/Mulish-SemiBold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Mulish;
+  font-display: swap;
+  src: url("../fonts/Mulish-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Mulish-SemiBoldItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+:root {
+  --container-width: 1200px;
+  --bg-color: #FBFBFC;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  height: 100%;
+  background-color: var(--bg-color);
+}
+
+h1 {
+  font-family: "ElMessiri", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "Mulish", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+[class*=__container] {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 10px;
+  width: 100%;
+}
+
+.menu-item-has-children a {
+  position: relative;
+  padding-right: 24px !important;
+}
+
+.menu-item-has-children a::after {
+  content: "▽";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-40%);
+  font-size: 12px;
+  color: #fff;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  padding: 22px;
+  z-index: 999;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  margin-right: auto;
+  margin-left: 40px;
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header__nav ul li {
+  list-style: none;
+}
+
+.header__nav ul li a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.header__nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bx_log-in {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.bx_log-in:hover {
+  left: -3px;
+}
+
+.hero {
+  padding: 200px 0;
+  overflow: hidden;
+}
+
+.hero__images {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-height: 480px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.167vw;
+  background-color: black;
+  overflow: hidden;
+}
+
+.hero__images_row {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.hero__images_row--1 {
+  margin-top: -26vh;
+}
+
+.hero__images_row--2 {
+  margin-top: -37vw;
+}
+
+.hero__images_row--3 {
+  margin-top: -20vw;
+}
+
+.hero__images_row--4 {
+  margin-top: -10vw;
+}
+
+.hero__images .down {
+  animation: moveDown 10s infinite ease-out alternate;
+}
+
+.hero__images .up {
+  animation: moveUp 10s infinite ease-out alternate;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15vw);
+  }
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15vw);
+  }
+}
+.hero__images .image {
+  background: 50%/cover no-repeat;
+  opacity: 0.25;
+}
+
+.hero__images .image:after {
+  content: "";
+  display: block;
+  padding-bottom: 150.4385964912%;
+}
+
+.hero__image {
+  width: 31.771vw;
+  margin: 0 auto;
+  position: relative;
+  transform: translateX(7vw);
+}
+
+.hero__image:after {
+  content: "";
+  display: block;
+  padding-bottom: 59.0160838501%;
+}
+
+.hero__container {
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.hero__container h3 {
+  margin-top: 76px;
+}
