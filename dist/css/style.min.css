@@ -372,6 +372,13 @@ h3 {
 
 .row-line__chat, .row-line_link {
   width: 224px;
+  color: #004AD6;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.row-title .row-line__chat, .row-title .row-line_link {
+  color: #000;
 }
 
 .row-title {
