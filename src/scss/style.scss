@@ -5,6 +5,9 @@
     --container-width: 1200px;
     --bg-color: #FBFBFC;
     --main-color: #004AD6;
+    --accent-color: #FFFC97;
+    --white: #fff;
+    --black: #1B1B1B
 }
 
 body{
@@ -20,8 +23,12 @@ h1{
 }
 h3 {
     font-family: "Mulish", sans-serif;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 600;
+}
+p {
+    margin: 0;
+    padding: 0;
 }
 .wrapper{
     display: flex;
@@ -32,14 +39,62 @@ h3 {
     flex: 1 1 auto;
 }
 
-[class*=__container] {
+[class*=__container], .container {
     margin: 0 auto;
     max-width: var(--container-width);
     padding: 0 10px;
     width: 100%;
 }
 
+.big-text{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+}
+.btn{
+    padding: 12px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+}
+.btn-main{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+.btn-main:hover{
+    background-color: #396fd4;
+}
+.ivent-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.ivent-row__item{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 62px;
+    margin: 12px 0;
+}
+.ivent-row__item--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 3px solid var(--accent-color);
+}
 
+.block-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
 // ================= WordPress Styles =======================
 
 .menu-item-has-children a{
@@ -180,11 +235,11 @@ h3 {
 }
 
 .hero__images .down {
-    animation: moveDown 10s infinite ease-out alternate
+    animation: moveDown 20s infinite ease-out alternate
 }
 
 .hero__images .up {
-    animation: moveUp 10s infinite ease-out alternate
+    animation: moveUp 20s infinite ease-out alternate
 }
 
 @keyframes moveDown {
@@ -245,79 +300,91 @@ h3 {
 }
 
 // ================ Calendar List ================
+.calendar__wrapper{
+    margin-top: 60px;
 
-.calendar-list{
-    margin-top: 50px;
 }
-.calendar-list {
-    overflow-x: hidden;
-}
-.calendar-list__container {
-        overflow-x: auto;
-}
-.row-line {
+.calendar-item__title{
     display: flex;
-    gap: 20px;
+    margin-bottom: 24px;
 }
-.row-line__item {
-    padding: 15px 10px;
-}
-.row-line__date {
-    width: 80px;
-}
-.row-line__time {
-    width: 70px;
-}
-.row-line__title {
-    width: 270px;
-    text-wrap: wrap;
-}
-.row-line__names{
-    width: 216px;
-}
-.row-line__chat, .row-line_link {
-    width: 224px;
-    color: #004AD6;
-    font-weight: 700;
-    text-decoration: underline;
-}
-.row-title .row-line__chat, .row-title .row-line_link{
-    color: #000;
-}
-.row-title {
+.calendar-item__wrapper {
     position: relative;
-    font-size: 18px;
-    font-weight: 700;
+    padding-left: 35px;
+    display: flex;
+    justify-content: space-between; 
 }
-.row-title::before {
-    content: '';
+.calendar-item__container {
+    margin-bottom: 56px;
+}
+.calendar-item__wrapper::before{
     position: absolute;
+    content: '';
+    width: 6px;
+    height: 100%;
+    background-color: var(--main-color);
     top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--main-color);
+    left: calc(28px + 35px);
+    z-index: -1;
 }
-.row-line {
+.calendar__wrapper h3 {
+    color: var(--main-color);
+    text-align: center;
+    font-weight: 700;
+}
+.calendar-item__title--date{
     position: relative;
-    width: calc(var(--container-width) - 20px);
+    font-family: "ElMessiri", sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
 }
-.row-line::after{
+.calendar-item__title--date::before{
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 146px;
+    height: 82px;
+    top: 0;
+    left: -12px;
+    background-image: url(../img/data-marker.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+}
+.calendar-item__title--number{
+    position: relative;
+    z-index: 2;
+    line-height: 100%;
+    font-size: 96px;
+}
+.calendar-item__title--month {
+    position: relative;
+    z-index: 2;
+    font-size: 40px;
+    line-height: 100%;
+}
+.calendar-item__title--name {
+    flex-grow: 1;
+    margin-top: 30px;
+}
+.calendar-item__info {
+    max-width: 40%;
+    padding: 25px 0;
+}
+.calendar-item__img {
+    max-width: 55%;
+    height: 100%;
+    aspect-ratio: 2 / 1.2;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.calendar-item__img img {
     width: 100%;
-    height: 2px;
-    background-color: var(--main-color);
+    height: 100%;
+    object-fit: cover;
 }
-.row-line.row-title::after{
-    height: 3px;
-}
-
-
 // ============ Media =====================
 @media (max-width: 1096px){
     .header__nav {
