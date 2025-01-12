@@ -498,3 +498,13 @@ p {
         height: 100vh;
     }
 }
+
+.footer {
+    height: 200px;
+    background-color: var(--black);
+}
+.footer img {
+    position: relative;
+    top: -24px;
+
+}
