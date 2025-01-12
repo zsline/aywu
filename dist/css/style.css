@@ -119,7 +119,7 @@ h1 {
 
 h3 {
   font-family: "Mulish", sans-serif;
-  font-size: 28px;
+  font-size: clamp(1.25rem, 0.79rem + 1.28vw, 1.75rem);
   font-weight: 600;
 }
 
@@ -146,7 +146,7 @@ p {
 }
 
 .big-text {
-  font-size: 24px;
+  font-size: clamp(1rem, 0.54rem + 1.28vw, 1.5rem);
   font-weight: 700;
   line-height: 100%;
 }
@@ -515,6 +515,14 @@ p {
     display: none;
   }
 }
+@media (max-width: 992px) {
+  .calendar-item__info {
+    max-width: 48%;
+  }
+  .calendar-item__img {
+    max-width: 50%;
+  }
+}
 @media (max-width: 760px) {
   .hero {
     padding: 144px 0 80px;
@@ -557,6 +565,41 @@ p {
   .hero h3 {
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .calendar-item__wrapper {
+    flex-direction: column-reverse;
+    padding-left: 0;
+  }
+  .calendar-item__wrapper::before {
+    left: 28px;
+  }
+  .ivent-row__item {
+    gap: 24px;
+  }
+  .calendar-item__title {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .calendar-item__title--name {
+    margin-top: 8px;
+  }
+  .calendar-item__title--number {
+    font-size: 72px;
+  }
+  .calendar-item__title--month {
+    font-size: 28px;
+  }
+  .calendar-item__title--date::before {
+    width: 102px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .calendar-item__info {
+    max-width: 100%;
+  }
+  .calendar-item__img {
+    max-width: 100%;
+    margin-bottom: 12px;
   }
 }
 @media (max-width: 425px) {
