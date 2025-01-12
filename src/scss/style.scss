@@ -94,6 +94,13 @@ p {
     display: flex;
     align-items: center;
     gap: 24px;
+} 
+.block-links a {
+    scale: 1;
+    transition: all 0.3s;
+}
+.block-links a:hover{
+    scale: 1.1;
 }
 // ================= WordPress Styles =======================
 
