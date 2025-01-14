@@ -34,7 +34,6 @@ h1{
 }
 h3 {
     font-family: "Mulish", sans-serif;
-    // font-size: 28px;
     font-size: clamp(1.25rem, calc(0.79rem + 1.28vw), 1.75rem);
     font-weight: 600;
 }
@@ -159,13 +158,16 @@ p {
     left: 0;
     right: 0;
     color: #fff;
-    padding: 22px;
+    padding: 22px 0;
     z-index: 999;
 }
 .header__wrapper{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.header__wrapper .custom-logo {
+    width: 219px;
 }
 .header__nav{
     margin-right: auto;
@@ -475,6 +477,39 @@ p {
 }
 // ============ Ivent =====================
 
+
+//  ============== Footer ==========
+
+.footer {
+    position: relative;
+    height: 200px;
+    background-color: var(--black);
+    margin-top: 40px;
+}
+.footer img {
+    position: relative;
+    top: -24px;
+    z-index: 99;
+}
+.footer__social{
+    position: absolute;
+    display: flex;
+    gap: 32px;
+    margin: 0 auto;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footer__social--item{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3px;
+    background-color: var(--bg-color);
+}
 // ============ Media =====================
 @media (max-width: 1096px){
     .header__nav {
@@ -610,8 +645,14 @@ p {
         max-width: 100%;
         margin-bottom: 12px;
     }
+    .footer__social {
+        top: 36px;
+    }
 }
 @media (max-width: 425px){
+    .header__wrapper .custom-logo {
+        width: 140px;
+    }
     .hero__images {
         flex-wrap: wrap;
         gap: 20px
@@ -619,35 +660,4 @@ p {
     .hero{
         height: 100vh;
     }
-}
-
-.footer {
-    position: relative;
-    height: 200px;
-    background-color: var(--black);
-    margin-top: 40px;
-}
-.footer img {
-    position: relative;
-    top: -24px;
-    z-index: 99;
-}
-.footer__social{
-    position: absolute;
-    display: flex;
-    gap: 32px;
-    margin: 0 auto;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.footer__social--item{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3px;
-    background-color: var(--bg-color);
 }
