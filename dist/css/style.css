@@ -101,7 +101,8 @@ h1, h2, h3, h4, h5, h6 {
   --main-color: #004AD6;
   --accent-color: #FFFC97;
   --white: #fff;
-  --black: #1B1B1B ;
+  --black: #1B1B1B;
+  --light-text: #707070;
 }
 
 body {
@@ -240,6 +241,63 @@ p {
   scale: 1.1;
 }
 
+.site-content__anons {
+  position: relative;
+  width: calc(75% + 50px);
+  padding: 20px 64px;
+  background-color: #EEEEEF;
+  border-radius: 20px;
+  min-height: 100px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+  -webkit-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.site-content__anons:hover {
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.site-content__anons::after {
+  position: absolute;
+  content: "";
+  width: 44px;
+  height: 87%;
+  top: 7%;
+  left: -10px;
+  background-image: url(../img/item.svg);
+  background-repeat: round;
+}
+
+.site-content__anons--item a {
+  display: flex;
+  align-items: center;
+  color: var(--light-text);
+  gap: 48px;
+  font-family: "Shantell Sans", serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+@media (max-width: 576px) {
+  .page-wrapper__container {
+    padding: 40px 15px !important;
+  }
+  .site-content__anons {
+    width: 100%;
+    padding: 20px 20px 20px 46px;
+  }
+  .site-content__anons--item a {
+    gap: 20px;
+  }
+}
 .menu-item-has-children a {
   position: relative;
   padding-right: 24px !important;
@@ -316,6 +374,7 @@ p {
 }
 
 .page-wrapper__container {
+  position: relative;
   padding: 40px;
   display: flex;
   justify-content: space-between;
@@ -331,6 +390,18 @@ p {
   min-height: 48px;
 }
 
+@media (max-width: 1024px) {
+  .site-sidebar {
+    position: absolute;
+    z-index: 2;
+    background-color: var(--bg-color);
+    padding: 24px;
+    min-width: 240px;
+    max-width: 320px;
+    top: 0;
+    right: -320px;
+  }
+}
 .site-sidebar {
   flex: 0 0 auto;
   width: 200px;
